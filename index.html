@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="index.js" async></script>
+    <title>Rolling Dice</title>
+</head>
+<body>
+    <h1> Rolling Dice </h1>
+    <h2> Use form to choose how many dice to roll (1, 2 or 3)
+<br>
+        Choose how many times to roll.
+<br>      
+        Click Button to roll the dice according to form information
+<br>     
+        See results on the table below. </h2>
+
+<p> Dice to Roll: </p>
+<form>
+    <input type="radio" id="1" name="DiceNum" value="1">
+    <label for="1">One</label><br>
+    <input type="radio" id="2" name="DiceNum" value="2">
+    <label for="2">Two</label><br>
+    <input type="radio" id="3" name="DiceNum" value="3">
+    <label for="3">Three</label>
+    <br>
+    <label for="frequency">Frequency:</label><br>
+    <input type="text" id="frequencyInput" name="frequencyInput"><br>
+  </form>
+  <button onclick="changeVariables()">Roll Dice</button>
+</body>
+</html>
