@@ -1,5 +1,7 @@
 let numDice = 0;
 let frequency = 0;
+let individualResults = [];
+let finalResults = [];
 //Works
 function changeVariables() {
     if (document.getElementById("1").checked) {
@@ -16,10 +18,12 @@ function changeVariables() {
 function getRandom() {
     return 1 + Math.floor(Math.random() * 6);
 }
+function initializeVariables() {
+    individualResults = [];
+    finalResults = [];
+}
 //Works
 function rollDice() {
-    let individualResults = [];
-    let finalResults = [];
     for (i = 0; i < frequency; i++) {
         let final = 0;
         for (j = 0; j < numDice; j++) {
@@ -77,9 +81,63 @@ function makeTable() {
     for (j = 0; j < finalResults.length; j++) {
         if (finalResults[j] == i) {
             count++;
+            console.log("work");
         }
     }
     c2.innerHTML = count;
     }
 }
+// 2 Dice
+if (numDice == 2) {
+    let doublesRolled = 0;
+    for (let k=0; k < individualResults.length; k++) {
+        for (let l=1; l < individualResults.length; l++) {
+            console.log(individualResults[k]);
+            console.log(individualResults[l]);
+            if (individualResults[k] == individualResults[l] && k != l) {
+                doublesRolled++;
+                console.log("yo");
+            }
+        }
+      }
+    //Frequency
+    for (i = 2; i < 13; i++) {
+  let row = table.insertRow(-1);
+  let c1 = row.insertCell(0);
+  let c2 = row.insertCell(1);
+  if (i == 2) {
+    let c3 = row.insertCell(2);
+    c3.innerHTML = doublesRolled;
+  }
+  c1.innerHTML = i;
+  let count = 0;
+  for (j = 0; j < finalResults.length; j++) {
+      if (finalResults[j] == i) {
+          count++;
+          console.log("work");
+      }
+  }
+  c2.innerHTML = count;
+  }
+  //DoublesRolled
+}
+
+//3 Dice
+if (numDice == 3) {
+    for (i = 3; i < 19; i++) {
+  let row = table.insertRow(-1);
+  let c1 = row.insertCell(0);
+  let c2 = row.insertCell(1);
+  c1.innerHTML = i;
+  let count = 0;
+  for (j = 0; j < finalResults.length; j++) {
+      if (finalResults[j] == i) {
+          count++;
+          console.log("work");
+      }
+  }
+  c2.innerHTML = count;
+  }
+}
+
 }
