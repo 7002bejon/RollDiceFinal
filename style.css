@@ -8,4 +8,10 @@ table,
     th{
       border: 1px solid black;
     }
+    body,
+      button {
+      width: 250px;
+      font-size: 24px;
+    }
+  
 
